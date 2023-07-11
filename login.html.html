@@ -1,0 +1,33 @@
+<html>
+<head>
+<title>login.html</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #a9b7c6;}
+.s1 { color: #e8bf6a;}
+.s2 { color: #bababa;}
+.s3 { color: #a5c261;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+login.html</font>
+</center></td></tr></table>
+<pre><span class="s0">{% extends 'index.html' %}</span>
+
+<span class="s0">{% block title %} Login {% endblock %}</span>
+
+<span class="s0">{% block content %}</span>
+  <span class="s1">&lt;h2&gt;</span><span class="s0">Login</span><span class="s1">&lt;/h2&gt;</span>
+  <span class="s1">&lt;div </span><span class="s2">class</span><span class="s3">='login-form'</span><span class="s1">&gt;</span>
+    <span class="s1">&lt;form </span><span class="s2">method</span><span class="s3">='post'</span><span class="s1">&gt;</span>
+      <span class="s0">{% csrf_token %}</span>
+      <span class="s0">{{ form.as_p }}</span>
+      <span class="s1">&lt;button </span><span class="s2">type</span><span class="s3">='submit' </span><span class="s2">id</span><span class="s3">='btn-submit'</span><span class="s1">&gt;</span><span class="s0">Login</span><span class="s1">&lt;/button&gt;</span>
+    <span class="s1">&lt;/form&gt;</span>
+  <span class="s1">&lt;/div&gt;</span>
+<span class="s0">{% endblock %}</span></pre>
+</body>
+</html>

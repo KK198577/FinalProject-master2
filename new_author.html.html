@@ -1,0 +1,42 @@
+<html>
+<head>
+<title>new_author.html</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #a9b7c6;}
+.s1 { color: #e8bf6a;}
+.s2 { color: #bababa;}
+.s3 { color: #a5c261;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+new_author.html</font>
+</center></td></tr></table>
+<pre><span class="s0">{% extends 'index.html' %}</span>
+<span class="s0">{% block content %}</span>
+
+  <span class="s0">{% if object.name %}</span>
+    <span class="s1">&lt;h2&gt;</span><span class="s0">Editace autora: {{ object.name }}</span><span class="s1">&lt;/h2&gt;</span>
+  <span class="s0">{% else %}</span>
+    <span class="s1">&lt;h2&gt;</span><span class="s0">Nový autor:</span><span class="s1">&lt;/h2&gt;</span>
+  <span class="s0">{% endif %}</span>
+
+  <span class="s1">&lt;div&gt;</span>
+    <span class="s1">&lt;form </span><span class="s2">method</span><span class="s3">=&quot;post&quot; </span><span class="s2">action</span><span class="s3">=&quot;&quot;</span><span class="s1">&gt;</span>
+      <span class="s0">{% csrf_token %}</span>
+      <span class="s1">&lt;table&gt;</span>
+        <span class="s0">{{ form.as_table }}</span>
+      <span class="s1">&lt;/table&gt;</span>
+      <span class="s1">&lt;button </span><span class="s2">type</span><span class="s3">=&quot;submit&quot;</span><span class="s1">&gt;</span><span class="s0">Save</span><span class="s1">&lt;/button&gt;</span>
+    <span class="s1">&lt;/form&gt;</span>
+  <span class="s1">&lt;/div&gt;</span>
+
+<span class="s0">{% endblock %}</span>
+
+
+</pre>
+</body>
+</html>

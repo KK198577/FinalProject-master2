@@ -1,0 +1,82 @@
+<html>
+<head>
+<title>urls.py</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #629755; font-style: italic;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #cc7832;}
+.s3 { color: #6a8759;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+urls.py</font>
+</center></td></tr></table>
+<pre><span class="s0">&quot;&quot;&quot; 
+URL configuration for library project. 
+ 
+The `urlpatterns` list routes URLs to views. For more information please see: 
+    https://docs.djangoproject.com/en/4.2/topics/http/urls/ 
+Examples: 
+Function views 
+    1. Add an import:  from my_app import views 
+    2. Add a URL to urlpatterns:  path('', views.home, name='home') 
+Class-based views 
+    1. Add an import:  from other_app.views import Home 
+    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home') 
+Including another URLconf 
+    1. Import the include() function: from django.urls import include, path 
+    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls')) 
+&quot;&quot;&quot;</span>
+<span class="s2">from </span><span class="s1">django.contrib </span><span class="s2">import </span><span class="s1">admin</span>
+<span class="s2">from </span><span class="s1">django.urls </span><span class="s2">import </span><span class="s1">path</span><span class="s2">, </span><span class="s1">include</span>
+
+<span class="s2">from </span><span class="s1">viewer.views </span><span class="s2">import </span><span class="s1">*</span>
+
+<span class="s2">from </span><span class="s1">account.views </span><span class="s2">import </span><span class="s1">SignUpView</span>
+
+<span class="s1">urlpatterns = [</span>
+    <span class="s1">path(</span><span class="s3">'admin/'</span><span class="s2">, </span><span class="s1">admin.site.urls)</span><span class="s2">,</span>
+    <span class="s1">path(</span><span class="s3">''</span><span class="s2">, </span><span class="s1">new_books</span><span class="s2">, </span><span class="s1">name=</span><span class="s3">'home'</span><span class="s1">)</span><span class="s2">,</span>
+    <span class="s1">path(</span><span class="s3">'new_books/'</span><span class="s2">, </span><span class="s1">new_books</span><span class="s2">, </span><span class="s1">name=</span><span class="s3">'new_books'</span><span class="s1">)</span><span class="s2">,</span>
+    <span class="s1">path(</span><span class="s3">'authors/'</span><span class="s2">, </span><span class="s1">authors</span><span class="s2">, </span><span class="s1">name=</span><span class="s3">'authors'</span><span class="s1">)</span><span class="s2">,</span>
+    <span class="s1">path(</span><span class="s3">'genres/'</span><span class="s2">, </span><span class="s1">genres</span><span class="s2">, </span><span class="s1">name=</span><span class="s3">'genres'</span><span class="s1">)</span><span class="s2">,</span>
+    <span class="s1">path(</span><span class="s3">'authors_ad/'</span><span class="s2">, </span><span class="s1">authors_ad</span><span class="s2">, </span><span class="s1">name=</span><span class="s3">'authors_ad'</span><span class="s1">)</span><span class="s2">,</span>
+    <span class="s1">path(</span><span class="s3">'languages/'</span><span class="s2">, </span><span class="s1">languages</span><span class="s2">, </span><span class="s1">name=</span><span class="s3">'languages'</span><span class="s1">)</span><span class="s2">,</span>
+    <span class="s1">path(</span><span class="s3">'conditions/'</span><span class="s2">, </span><span class="s1">conditions</span><span class="s2">, </span><span class="s1">name=</span><span class="s3">'conditions'</span><span class="s1">)</span><span class="s2">,</span>
+    <span class="s1">path(</span><span class="s3">'author/&lt;pk&gt;/'</span><span class="s2">, </span><span class="s1">author</span><span class="s2">, </span><span class="s1">name=</span><span class="s3">'author'</span><span class="s1">)</span><span class="s2">,</span>
+
+    <span class="s1">path(</span><span class="s3">'books/'</span><span class="s2">, </span><span class="s1">BooksView.as_view()</span><span class="s2">, </span><span class="s1">name=</span><span class="s3">'books'</span><span class="s1">)</span><span class="s2">,</span>
+    <span class="s1">path(</span><span class="s3">'books/&lt;page&gt;'</span><span class="s2">, </span><span class="s1">BooksView.as_view()</span><span class="s2">, </span><span class="s1">name=</span><span class="s3">'books'</span><span class="s1">)</span><span class="s2">,</span>
+
+    <span class="s1">path(</span><span class="s3">'new_book/'</span><span class="s2">, </span><span class="s1">BookCreateView.as_view()</span><span class="s2">, </span><span class="s1">name=</span><span class="s3">'new_book'</span><span class="s1">)</span><span class="s2">,</span>
+    <span class="s1">path(</span><span class="s3">'book_update/&lt;pk&gt;/'</span><span class="s2">, </span><span class="s1">BookUpdateView.as_view()</span><span class="s2">, </span><span class="s1">name=</span><span class="s3">'book_update'</span><span class="s1">)</span><span class="s2">,</span>
+    <span class="s1">path(</span><span class="s3">'book_delete/&lt;pk&gt;/'</span><span class="s2">, </span><span class="s1">BookDeleteView.as_view()</span><span class="s2">, </span><span class="s1">name=</span><span class="s3">'book_delete'</span><span class="s1">)</span><span class="s2">,</span>
+
+    <span class="s1">path(</span><span class="s3">'new_author/'</span><span class="s2">, </span><span class="s1">AuthorCreateView.as_view()</span><span class="s2">, </span><span class="s1">name=</span><span class="s3">'new_author'</span><span class="s1">)</span><span class="s2">,</span>
+    <span class="s1">path(</span><span class="s3">'author_update/&lt;pk&gt;/'</span><span class="s2">, </span><span class="s1">AuthorUpdateView.as_view()</span><span class="s2">, </span><span class="s1">name=</span><span class="s3">'author_update'</span><span class="s1">)</span><span class="s2">,</span>
+    <span class="s1">path(</span><span class="s3">'author_delete/&lt;pk&gt;/'</span><span class="s2">, </span><span class="s1">AuthorDeleteView.as_view()</span><span class="s2">, </span><span class="s1">name=</span><span class="s3">'author_delete'</span><span class="s1">)</span><span class="s2">,</span>
+
+    <span class="s1">path(</span><span class="s3">'new_genre/'</span><span class="s2">, </span><span class="s1">GenreCreateView.as_view()</span><span class="s2">, </span><span class="s1">name=</span><span class="s3">'new_genre'</span><span class="s1">)</span><span class="s2">,</span>
+    <span class="s1">path(</span><span class="s3">'genre_update/&lt;pk&gt;/'</span><span class="s2">, </span><span class="s1">GenreUpdateView.as_view()</span><span class="s2">, </span><span class="s1">name=</span><span class="s3">'genre_update'</span><span class="s1">)</span><span class="s2">,</span>
+    <span class="s1">path(</span><span class="s3">'genre_delete/&lt;pk&gt;/'</span><span class="s2">, </span><span class="s1">GenreDeleteView.as_view()</span><span class="s2">, </span><span class="s1">name=</span><span class="s3">'genre_delete'</span><span class="s1">)</span><span class="s2">,</span>
+
+    <span class="s1">path(</span><span class="s3">'new_language/'</span><span class="s2">, </span><span class="s1">LanguageCreateView.as_view()</span><span class="s2">, </span><span class="s1">name=</span><span class="s3">'new_language'</span><span class="s1">)</span><span class="s2">,</span>
+    <span class="s1">path(</span><span class="s3">'language_update/&lt;pk&gt;/'</span><span class="s2">, </span><span class="s1">LanguageUpdateView.as_view()</span><span class="s2">, </span><span class="s1">name=</span><span class="s3">'language_update'</span><span class="s1">)</span><span class="s2">,</span>
+    <span class="s1">path(</span><span class="s3">'language_delete/&lt;pk&gt;/'</span><span class="s2">, </span><span class="s1">LanguageDeleteView.as_view()</span><span class="s2">, </span><span class="s1">name=</span><span class="s3">'language_delete'</span><span class="s1">)</span><span class="s2">,</span>
+
+    <span class="s1">path(</span><span class="s3">'search/'</span><span class="s2">, </span><span class="s1">search</span><span class="s2">, </span><span class="s1">name=</span><span class="s3">'search'</span><span class="s1">)</span><span class="s2">,</span>
+
+    <span class="s1">path(</span><span class="s3">'book/&lt;pk&gt;/'</span><span class="s2">, </span><span class="s1">book</span><span class="s2">, </span><span class="s1">name=</span><span class="s3">'book'</span><span class="s1">)</span><span class="s2">,</span>
+
+    <span class="s1">path(</span><span class="s3">'accounts/signup'</span><span class="s2">, </span><span class="s1">SignUpView.as_view()</span><span class="s2">, </span><span class="s1">name=</span><span class="s3">'signup'</span><span class="s1">)</span><span class="s2">,</span>
+    <span class="s1">path(</span><span class="s3">'accounts/'</span><span class="s2">, </span><span class="s1">include(</span><span class="s3">'django.contrib.auth.urls'</span><span class="s1">))</span><span class="s2">,</span>
+
+
+<span class="s1">]</span>
+</pre>
+</body>
+</html>

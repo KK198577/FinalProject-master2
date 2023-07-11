@@ -1,0 +1,47 @@
+<html>
+<head>
+<title>book.html</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #a9b7c6;}
+.s1 { color: #e8bf6a;}
+.s2 { color: #bababa;}
+.s3 { color: #a5c261;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+book.html</font>
+</center></td></tr></table>
+<pre><span class="s0">{% extends 'index.html' %}</span>
+
+<span class="s0">{% block content %}</span>
+  <span class="s1">&lt;h2&gt;&lt;span&gt;</span><span class="s0">{{ book.name }}</span><span class="s1">&lt;/span&gt; &lt;/h2&gt;</span>
+  <span class="s1">&lt;table </span><span class="s2">class</span><span class="s3">=&quot;table&quot;</span><span class="s1">&gt;</span>
+    <span class="s1">&lt;tr&gt;&lt;td </span><span class="s2">rowspan</span><span class="s3">=&quot;10&quot;</span><span class="s1">&gt;&lt;img </span><span class="s2">src</span><span class="s3">=&quot; {{ book.image }} &quot; </span><span class="s2">width</span><span class="s3">=200px</span><span class="s1">&gt;&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;</span>
+    <span class="s1">&lt;tr&gt;&lt;td </span><span class="s2">class</span><span class="s3">=&quot;td_bold&quot;</span><span class="s1">&gt;</span><span class="s0">Originální název:</span><span class="s1">&lt;/td&gt;&lt;td&gt; </span><span class="s0">{{ book.original_name }} </span><span class="s1">&lt;/td&gt;&lt;/tr&gt;</span>
+    <span class="s1">&lt;tr&gt;&lt;td </span><span class="s2">class</span><span class="s3">=&quot;td_bold&quot;</span><span class="s1">&gt;</span><span class="s0">Autor:</span><span class="s1">&lt;/td&gt;&lt;td&gt;&lt;a </span><span class="s2">href</span><span class="s3">=&quot;{% url 'author' book.get_author_id %}&quot;</span><span class="s1">&gt; </span><span class="s0">{{ book.get_author }} </span><span class="s1">&lt;/td&gt;&lt;/tr&gt;</span>
+    <span class="s1">&lt;tr&gt;&lt;td </span><span class="s2">class</span><span class="s3">=&quot;td_bold&quot;</span><span class="s1">&gt;</span><span class="s0">Žánr:</span><span class="s1">&lt;/td&gt;&lt;td&gt; </span><span class="s0">{{ book.get_genre }} </span><span class="s1">&lt;/td&gt;&lt;/tr&gt;</span>
+    <span class="s1">&lt;tr&gt;&lt;td </span><span class="s2">class</span><span class="s3">=&quot;td_bold&quot;</span><span class="s1">&gt;</span><span class="s0">Rok:</span><span class="s1">&lt;/td&gt;&lt;td&gt; </span><span class="s0">{{ book.year }} </span><span class="s1">&lt;/td&gt;&lt;/tr&gt;</span>
+    <span class="s1">&lt;tr&gt;&lt;td </span><span class="s2">class</span><span class="s3">=&quot;td_bold&quot;</span><span class="s1">&gt;</span><span class="s0">Jazyk:</span><span class="s1">&lt;/td&gt;&lt;td&gt; </span><span class="s0">{{ book.get_language }} </span><span class="s1">&lt;/td&gt;&lt;/tr&gt;</span>
+    <span class="s1">&lt;tr&gt;&lt;td </span><span class="s2">class</span><span class="s3">=&quot;td_bold&quot;</span><span class="s1">&gt;</span><span class="s0">Stránek:</span><span class="s1">&lt;/td&gt;&lt;td&gt; </span><span class="s0">{{ book.page }} </span><span class="s1">&lt;/td&gt;&lt;/tr&gt;</span>
+    <span class="s1">&lt;tr&gt;&lt;td </span><span class="s2">class</span><span class="s3">=&quot;td_bold&quot;</span><span class="s1">&gt;</span><span class="s0">ISBN:</span><span class="s1">&lt;/td&gt;&lt;td&gt; </span><span class="s0">{{ book.isbn }} </span><span class="s1">&lt;/td&gt;&lt;/tr&gt;</span>
+    <span class="s1">&lt;tr&gt;&lt;td </span><span class="s2">class</span><span class="s3">=&quot;td_bold&quot;</span><span class="s1">&gt;</span><span class="s0">Částka:</span><span class="s1">&lt;/td&gt;&lt;td&gt; </span><span class="s0">{{ book.amount }} </span><span class="s1">&lt;/td&gt;&lt;/tr&gt;</span>
+    <span class="s1">&lt;tr&gt;&lt;td </span><span class="s2">class</span><span class="s3">=&quot;td_right&quot; </span><span class="s2">colspan</span><span class="s3">=&quot;3&quot;</span><span class="s1">&gt;</span>
+      <span class="s1">&lt;a </span><span class="s2">href</span><span class="s3">=&quot;{% url 'book_update' book.id %}&quot;</span><span class="s1">&gt;</span><span class="s0">edit</span><span class="s1">&lt;/a&gt;</span>
+      <span class="s1">&lt;a </span><span class="s2">href</span><span class="s3">=&quot;{% url 'book_delete' book.id %}&quot;</span><span class="s1">&gt;</span><span class="s0">delete</span><span class="s1">&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;</span>
+  <span class="s1">&lt;/table&gt;&lt;hr&gt;</span>
+
+  <span class="s1">&lt;table </span><span class="s2">class</span><span class="s3">=&quot;table&quot;</span><span class="s1">&gt;</span>
+    <span class="s1">&lt;tr&gt;</span>
+      <span class="s1">&lt;td </span><span class="s2">class</span><span class="s3">=&quot;td_bold&quot; </span><span class="s2">style</span><span class="s3">=&quot;width: 20px; vertical-align: top;&quot;</span><span class="s1">&gt;</span><span class="s0">Popis:</span><span class="s1">&lt;/td&gt;</span>
+      <span class="s1">&lt;td&gt;</span><span class="s0">{{ book.description }}</span><span class="s1">&lt;/td&gt;</span>
+    <span class="s1">&lt;/tr&gt;</span>
+  <span class="s1">&lt;/table&gt;</span>
+
+<span class="s0">{% endblock %}</span>
+</pre>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<html>
+<head>
+<title>nav_menu.html</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #e8bf6a;}
+.s1 { color: #bababa;}
+.s2 { color: #a5c261;}
+.s3 { color: #a9b7c6;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+nav_menu.html</font>
+</center></td></tr></table>
+<pre><span class="s0">&lt;link </span><span class="s1">href</span><span class="s2">=&quot;../static/style.css&quot; </span><span class="s1">rel</span><span class="s2">=&quot;stylesheet&quot; </span><span class="s1">type</span><span class="s2">=&quot;text/css&quot; </span><span class="s0">/&gt;</span>
+
+<span class="s0">&lt;div </span><span class="s1">class</span><span class="s2">=&quot;menu_nav&quot;</span><span class="s0">&gt;</span>
+    <span class="s0">&lt;ul </span><span class="s1">class</span><span class="s2">=&quot;navbar-nav&quot;</span><span class="s0">&gt;</span>
+        <span class="s0">&lt;li </span><span class="s1">class</span><span class="s2">=&quot;nav-item{% if request.path == '/' %} active{% endif %}&quot;</span><span class="s0">&gt;&lt;a </span><span class="s1">href</span><span class="s2">=&quot;{% url 'home' %}&quot;</span><span class="s0">&gt;</span><span class="s3">Home</span><span class="s0">&lt;/a&gt;&lt;/li&gt;</span>
+        <span class="s0">&lt;li </span><span class="s1">class</span><span class="s2">=&quot;nav-item{% if request.path == '/authors/' %} active{% endif %}&quot;</span><span class="s0">&gt;&lt;a </span><span class="s1">href</span><span class="s2">=&quot;{% url 'authors' %}&quot;</span><span class="s0">&gt;</span><span class="s3">Authors</span><span class="s0">&lt;/a&gt;&lt;/li&gt;</span>
+        <span class="s0">&lt;li </span><span class="s1">class</span><span class="s2">=&quot;nav-item{% if request.path == '/books/' %} active{% endif %}&quot;</span><span class="s0">&gt;&lt;a </span><span class="s1">href</span><span class="s2">=&quot;{% url 'books' %}&quot;</span><span class="s0">&gt;</span><span class="s3">Books</span><span class="s0">&lt;/a&gt;&lt;/li&gt;</span>
+        <span class="s0">&lt;li </span><span class="s1">class</span><span class="s2">=&quot;nav-item{% if request.path == '/conditions/' %} active{% endif %}&quot;</span><span class="s0">&gt;&lt;a </span><span class="s1">href</span><span class="s2">=&quot;{% url 'conditions' %}&quot;</span><span class="s0">&gt;</span><span class="s3">Conditions</span><span class="s0">&lt;/a&gt;&lt;/li&gt;</span>
+        <span class="s0">&lt;li </span><span class="s1">class</span><span class="s2">=&quot;nav-item{% if request.path == '/contact/' %} active{% endif %}&quot;</span><span class="s0">&gt;&lt;a </span><span class="s1">href</span><span class="s2">=&quot;&quot;</span><span class="s0">&gt;</span><span class="s3">Registration</span><span class="s0">&lt;/a&gt;&lt;/li&gt;</span>
+    <span class="s0">&lt;/ul&gt;</span>
+<span class="s0">&lt;/div&gt;</span>
+
+<span class="s0">&lt;script&gt;</span>
+    <span class="s3">$(document).ready(function () {</span>
+        <span class="s3">$('ul.navbar-nav &gt; li').each(function () {</span>
+            <span class="s3">var link = $(this).find('a').attr('href');</span>
+            <span class="s3">if (link === '{{ request.path }}') {</span>
+                <span class="s3">$(this).addClass('active');</span>
+            <span class="s3">}</span>
+        <span class="s3">});</span>
+    <span class="s3">});</span>
+<span class="s0">&lt;/script&gt;</span>
+</pre>
+</body>
+</html>

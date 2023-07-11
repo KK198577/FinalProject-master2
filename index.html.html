@@ -1,0 +1,148 @@
+<html>
+<head>
+<title>index.html</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #e8bf6a;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #bababa;}
+.s3 { color: #a5c261;}
+.s4 { color: #808080;}
+.s5 { color: #6d9cbe;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+index.html</font>
+</center></td></tr></table>
+<pre><span class="s0">&lt;!DOCTYPE </span><span class="s2">html </span><span class="s0">PUBLIC </span><span class="s3">&quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;</span><span class="s0">&gt;</span>
+<span class="s1">{% load static %}</span>
+<span class="s0">&lt;html </span><span class="s2">xmlns</span><span class="s3">=&quot;http://www.w3.org/1999/xhtml&quot;</span><span class="s0">&gt;</span>
+<span class="s0">&lt;head&gt;</span>
+<span class="s0">&lt;title&gt;</span><span class="s1">LibraryPro</span><span class="s0">&lt;/title&gt;</span>
+<span class="s0">&lt;meta </span><span class="s2">http-equiv</span><span class="s3">=&quot;Content-Type&quot; </span><span class="s2">content</span><span class="s3">=&quot;text/html; charset=UTF-8&quot; </span><span class="s0">/&gt;</span>
+<span class="s4">&lt;!--&lt;link href=&quot;../static/style.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot; /&gt;--&gt;</span>
+<span class="s0">&lt;link </span><span class="s2">href</span><span class="s3">=&quot;{% static 'style.css' %}&quot; </span><span class="s2">rel</span><span class="s3">=&quot;stylesheet&quot; </span><span class="s2">type</span><span class="s3">=&quot;text/css&quot; </span><span class="s0">/&gt;</span>
+<span class="s0">&lt;script </span><span class="s2">type</span><span class="s3">=&quot;text/javascript&quot; </span><span class="s2">src</span><span class="s3">=&quot;{% static 'js/cufon-yui.js' %}&quot;</span><span class="s0">&gt;&lt;/script&gt;</span>
+<span class="s0">&lt;script </span><span class="s2">type</span><span class="s3">=&quot;text/javascript&quot; </span><span class="s2">src</span><span class="s3">=&quot;{% static 'js/arial.js' %}&quot;</span><span class="s0">&gt;&lt;/script&gt;</span>
+<span class="s0">&lt;script </span><span class="s2">type</span><span class="s3">=&quot;text/javascript&quot; </span><span class="s2">src</span><span class="s3">=&quot;{% static 'js/cuf_run.js' %}&quot;</span><span class="s0">&gt;&lt;/script&gt;</span>
+<span class="s0">&lt;/head&gt;</span>
+<span class="s0">&lt;body&gt;</span>
+<span class="s4">&lt;!-- START PAGE SOURCE --&gt;</span>
+<span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;main&quot;</span><span class="s0">&gt;</span>
+  <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;header&quot;</span><span class="s0">&gt;</span>
+    <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;header_resize&quot;</span><span class="s0">&gt;</span>
+      <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;logo&quot;</span><span class="s0">&gt;</span>
+        <span class="s0">&lt;h1&gt;&lt;a </span><span class="s2">href</span><span class="s3">=&quot;index.html&quot;</span><span class="s0">&gt;</span><span class="s1">online</span><span class="s0">&lt;span&gt;</span><span class="s1">Library</span><span class="s0">&lt;/span&gt;&lt;/a&gt; &lt;small&gt;</span><span class="s1">our books 4 U</span><span class="s0">&lt;/small&gt;&lt;/h1&gt;</span>
+      <span class="s0">&lt;/div&gt;</span>
+<span class="s4">&lt;!-- MENU --&gt;</span>
+      <span class="s1">{% include 'nav_menu.html' %}</span>
+<span class="s4">&lt;!--      &lt;div class=&quot;clr&quot;&gt;&lt;/div&gt;--&gt;</span>
+<span class="s4">&lt;!--      &lt;div class=&quot;menu_nav&quot;&gt;--&gt;</span>
+<span class="s4">&lt;!--        &lt;ul&gt;--&gt;</span>
+<span class="s4">&lt;!--          &lt;li&gt;&lt;a href=&quot;{% url 'home' %}&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;--&gt;</span>
+<span class="s4">&lt;!--          &lt;li&gt;&lt;a href=&quot; {% url 'authors' %} &quot;&gt;Authors&lt;/a&gt;&lt;/li&gt;--&gt;</span>
+<span class="s4">&lt;!--          &lt;li&gt;&lt;a href=&quot; {% url 'books' %} &quot;&gt;Books&lt;/a&gt;&lt;/li&gt;--&gt;</span>
+<span class="s4">&lt;!--          &lt;li&gt;&lt;a href=&quot;&quot;&gt;Conditions&lt;/a&gt;&lt;/li&gt;--&gt;</span>
+<span class="s4">&lt;!--          &lt;li&gt;&lt;a href=&quot;&quot;&gt;Registration&lt;/a&gt;&lt;/li&gt;--&gt;</span>
+<span class="s4">&lt;!--        &lt;/ul&gt;--&gt;</span>
+<span class="s4">&lt;!--      &lt;/div&gt;--&gt;</span>
+
+<span class="s4">&lt;!-- SEARCH --&gt;</span>
+      <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;searchform&quot;</span><span class="s0">&gt;</span>
+        <span class="s0">&lt;form </span><span class="s2">id</span><span class="s3">=&quot;formsearch&quot; </span><span class="s2">name</span><span class="s3">=&quot;formsearch&quot; </span><span class="s2">method</span><span class="s3">=&quot;post&quot; </span><span class="s2">action</span><span class="s3">=&quot;/search/&quot;</span><span class="s0">&gt;</span>
+          <span class="s1">{% csrf_token %}</span>
+          <span class="s0">&lt;span&gt;</span>
+          <span class="s0">&lt;input </span><span class="s2">name</span><span class="s3">=&quot;editbox_search&quot; </span><span class="s2">class</span><span class="s3">=&quot;editbox_search&quot; </span><span class="s2">id</span><span class="s3">=&quot;editbox_search&quot; </span><span class="s2">maxlength</span><span class="s3">=&quot;80&quot; </span><span class="s2">placeholder</span><span class="s3">=&quot;Search: &quot; </span><span class="s2">type</span><span class="s3">=&quot;text&quot; </span><span class="s0">/&gt;</span>
+          <span class="s0">&lt;/span&gt;</span>
+          <span class="s0">&lt;input </span><span class="s2">name</span><span class="s3">=&quot;button_search&quot; </span><span class="s2">src</span><span class="s3">=&quot;https://www.databazeknih.cz/img/content/magnifier.svg&quot; </span><span class="s2">class</span><span class="s3">=&quot;button_search&quot; </span><span class="s2">type</span><span class="s3">=&quot;image&quot; </span><span class="s0">/&gt;</span>
+        <span class="s0">&lt;/form&gt;</span>
+      <span class="s0">&lt;/div&gt;</span>
+    <span class="s0">&lt;/div&gt;</span>
+  <span class="s0">&lt;/div&gt;</span>
+
+  <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;content&quot;</span><span class="s0">&gt;</span>
+    <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;content_resize&quot;</span><span class="s0">&gt;</span>
+      <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;content_resize2&quot;</span><span class="s0">&gt;</span>
+        <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;mainbar&quot;</span><span class="s0">&gt;</span>
+          <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;article&quot;</span><span class="s0">&gt;</span>
+
+<span class="s4">&lt;!-- CONTENT --&gt;</span>
+            <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;clr&quot;</span><span class="s0">&gt;&lt;/div&gt;</span>
+              <span class="s1">{% block content %}</span>
+                <span class="s0">&lt;h2&gt;&lt;span&gt;</span><span class="s1">Novinky:</span><span class="s0">&lt;/span&gt;&lt;/h2&gt;</span>
+                  <span class="s1">{% for book in books %}</span>
+                  <span class="s1">{% if forloop.counter &lt;= 10 %}</span>
+                    <span class="s0">&lt;a </span><span class="s2">href</span><span class="s3">=&quot;{% url 'book' book.id %}&quot;</span><span class="s0">&gt;</span>
+                    <span class="s0">&lt;img </span><span class="s2">src</span><span class="s3">=&quot;{{ book.image }}&quot; </span><span class="s2">width </span><span class="s3">= 16% </span><span class="s2">height</span><span class="s3">= 140 </span><span class="s2">px</span><span class="s0">&gt;</span>
+                    <span class="s0">&lt;/a&gt;</span>
+                  <span class="s1">{% else %}</span>
+
+                  <span class="s1">{% endif %}</span>
+                  <span class="s1">{% endfor %}</span>
+              <span class="s1">{% endblock %}</span>
+            <span class="s0">&lt;/div&gt;</span>
+          <span class="s0">&lt;/div&gt;</span>
+
+<span class="s4">&lt;!-- SIDEBAR --&gt;</span>
+        <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;sidebar&quot;</span><span class="s0">&gt;</span>
+          <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;gadget&quot;</span><span class="s0">&gt;</span>
+            <span class="s0">&lt;h2 </span><span class="s2">class</span><span class="s3">=&quot;star&quot;</span><span class="s0">&gt;</span><span class="s1">User Menu</span><span class="s0">&lt;/h2&gt;</span>
+            <span class="s0">&lt;ul </span><span class="s2">class</span><span class="s3">=&quot;sb_menu&quot;</span><span class="s0">&gt;</span>
+              <span class="s0">&lt;li&gt;&lt;a </span><span class="s2">href</span><span class="s3">=&quot;{% url 'login' %}&quot;</span><span class="s0">&gt;</span><span class="s1">Login In</span><span class="s0">&lt;/a&gt;&lt;/li&gt;</span>
+              <span class="s0">&lt;li&gt;&lt;a </span><span class="s2">href</span><span class="s3">=&quot;&quot;</span><span class="s0">&gt;</span><span class="s1">Log Out</span><span class="s0">&lt;/a&gt;&lt;/li&gt;</span>
+              <span class="s0">&lt;li&gt;&lt;a </span><span class="s2">href</span><span class="s3">=&quot;/admin/&quot; </span><span class="s2">target</span><span class="s3">=&quot;_blank&quot;</span><span class="s0">&gt;</span><span class="s1">Admin page</span><span class="s0">&lt;/a&gt;&lt;/li&gt;</span>
+              <span class="s0">&lt;li&gt;&lt;a </span><span class="s2">href</span><span class="s3">=&quot;{% url 'new_book' %}&quot;</span><span class="s0">&gt;</span><span class="s1">New book</span><span class="s0">&lt;/a&gt;&lt;/li&gt;</span>
+              <span class="s0">&lt;li&gt;&lt;a </span><span class="s2">href</span><span class="s3">=&quot;{% url 'authors_ad' %}&quot;</span><span class="s0">&gt;</span><span class="s1">Authors (new / edit / delete)</span><span class="s0">&lt;/a&gt;&lt;/li&gt;</span>
+              <span class="s0">&lt;li&gt;&lt;a </span><span class="s2">href</span><span class="s3">=&quot;{% url 'genres' %}&quot;</span><span class="s0">&gt;</span><span class="s1">Genres (new / edit / delete)</span><span class="s0">&lt;/a&gt;&lt;/li&gt;</span>
+              <span class="s0">&lt;li&gt;&lt;a </span><span class="s2">href</span><span class="s3">=&quot;{% url 'languages' %}&quot;</span><span class="s0">&gt;</span><span class="s1">Languages (new / edit / delete)</span><span class="s0">&lt;/a&gt;&lt;/li&gt;</span>
+            <span class="s0">&lt;/ul&gt;</span>
+          <span class="s0">&lt;/div&gt;</span>
+
+
+        <span class="s0">&lt;/div&gt;</span>
+        <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;clr&quot;</span><span class="s0">&gt;&lt;/div&gt;</span>
+      <span class="s0">&lt;/div&gt;</span>
+    <span class="s0">&lt;/div&gt;</span>
+  <span class="s0">&lt;/div&gt;</span>
+
+<span class="s4">&lt;!-- CONTENT 3-4 --&gt;</span>
+  <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;fbg&quot;</span><span class="s0">&gt;</span>
+    <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;fbg_resize&quot;</span><span class="s0">&gt;</span>
+      <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;col c1&quot;</span><span class="s0">&gt;</span>
+        <span class="s0">&lt;h2&gt;&lt;span&gt;</span><span class="s1">Content template 3</span><span class="s0">&lt;/span&gt;&lt;/h2&gt;</span>
+        <span class="s1">doplnit / smazat</span>
+      <span class="s0">&lt;/div&gt;</span>
+
+      <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;col c2&quot;</span><span class="s0">&gt;</span>
+        <span class="s0">&lt;h2&gt;</span><span class="s1">Content template 4</span><span class="s0">&lt;/h2&gt;</span>
+        <span class="s1">doplnit / smazat</span>
+      <span class="s0">&lt;/div&gt;</span>
+
+      <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;col c3&quot;</span><span class="s0">&gt;</span>
+        <span class="s0">&lt;h2&gt;&lt;span&gt;</span><span class="s1">Contact</span><span class="s0">&lt;/span&gt;&lt;/h2&gt;</span>
+        <span class="s0">&lt;p&gt;</span><span class="s1">Knihovna s.r.o.</span><span class="s0">&lt;/p&gt;</span>
+        <span class="s0">&lt;p&gt;&lt;a </span><span class="s2">href</span><span class="s3">=&quot;#&quot;</span><span class="s0">&gt;</span><span class="s1">online@library.cz</span><span class="s0">&lt;/a&gt;&lt;/p&gt;</span>
+        <span class="s0">&lt;p&gt;</span><span class="s1">Phone: +420 286 415 211, +420 774 218 247</span><span class="s0">&lt;/p&gt;</span>
+        <span class="s0">&lt;p&gt;</span><span class="s1">Address: Na Východě 11/326, 158 00, Praha 13</span><span class="s0">&lt;/p&gt;</span>
+      <span class="s0">&lt;/div&gt;</span>
+      <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;clr&quot;</span><span class="s0">&gt;&lt;/div&gt;</span>
+    <span class="s0">&lt;/div&gt;</span>
+
+  <span class="s0">&lt;/div&gt;</span>
+  <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;footer&quot;</span><span class="s0">&gt;</span>
+    <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;footer_resize&quot;</span><span class="s0">&gt;</span>
+      <span class="s0">&lt;p </span><span class="s2">class</span><span class="s3">=&quot;lr&quot;</span><span class="s0">&gt;</span><span class="s1">Copyright </span><span class="s5">&amp;copy; </span><span class="s1">2023 </span><span class="s0">&lt;a </span><span class="s2">href</span><span class="s3">=&quot;&quot;</span><span class="s0">&gt;</span><span class="s1">SDA Python team n. 3</span><span class="s0">&lt;/a&gt; </span><span class="s1">- All Rights Reserved</span><span class="s0">&lt;/p&gt;</span>
+      <span class="s0">&lt;p </span><span class="s2">class</span><span class="s3">=&quot;lf&quot;</span><span class="s0">&gt;</span><span class="s1">Design by </span><span class="s0">&lt;a </span><span class="s2">href</span><span class="s3">=&quot;&quot;</span><span class="s0">&gt;</span><span class="s1">Jane &amp; Karl &amp; Richi &amp; Martin</span><span class="s0">&lt;/a&gt;&lt;/p&gt;</span>
+      <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;clr&quot;</span><span class="s0">&gt;&lt;/div&gt;</span>
+    <span class="s0">&lt;/div&gt;</span>
+  <span class="s0">&lt;/div&gt;</span>
+<span class="s0">&lt;/div&gt;</span>
+
+<span class="s0">&lt;/body&gt;</span>
+<span class="s0">&lt;/html&gt;</span>
+</pre>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<html>
+<head>
+<title>search.html</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #a9b7c6;}
+.s1 { color: #e8bf6a;}
+.s2 { color: #bababa;}
+.s3 { color: #a5c261;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+search.html</font>
+</center></td></tr></table>
+<pre><span class="s0">{% extends 'index.html' %}</span>
+
+<span class="s0">{% block content %}</span>
+  <span class="s1">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;search-result&quot;</span><span class="s1">&gt;</span>
+    <span class="s0">Results for &quot;{{ pattern }}&quot;:</span>
+  <span class="s1">&lt;/div&gt;</span>
+
+  <span class="s1">&lt;h2&gt;</span><span class="s0">Books by czech name:</span><span class="s1">&lt;/h2&gt;</span>
+    <span class="s1">&lt;ul&gt;</span>
+    <span class="s0">{% for book in books_name %}</span>
+      <span class="s1">&lt;li&gt;&lt;a </span><span class="s2">href</span><span class="s3">=&quot;{% url 'book' book.id %}&quot;</span><span class="s1">&gt; </span><span class="s0">{{ book.name }} </span><span class="s1">&lt;/a&gt;&lt;/li&gt;</span>
+    <span class="s0">{% empty %}</span>
+      <span class="s1">&lt;i&gt;</span><span class="s0">Nothing found</span><span class="s1">&lt;/i&gt;</span>
+    <span class="s0">{% endfor %}</span>
+    <span class="s1">&lt;/ul&gt;</span>
+  <span class="s1">&lt;h2&gt;</span><span class="s0">Books by original name:</span><span class="s1">&lt;/h2&gt;</span>
+    <span class="s1">&lt;ul&gt;</span>
+    <span class="s0">{% for book in books_original_name %}</span>
+      <span class="s1">&lt;li&gt;&lt;a </span><span class="s2">href</span><span class="s3">=&quot;{% url 'book' book.id %}&quot;</span><span class="s1">&gt;</span><span class="s0">{{ book.original_name }}</span><span class="s1">&lt;/a&gt;&lt;/li&gt;</span>
+    <span class="s0">{% empty %}</span>
+      <span class="s1">&lt;i&gt;</span><span class="s0">Nothing found</span><span class="s1">&lt;/i&gt;</span>
+    <span class="s0">{% endfor %}</span>
+    <span class="s1">&lt;/ul&gt;</span>
+  <span class="s1">&lt;h2&gt;</span><span class="s0">Books by description:</span><span class="s1">&lt;/h2&gt;</span>
+    <span class="s1">&lt;ul&gt;</span>
+    <span class="s0">{% for book in books_description %}</span>
+      <span class="s1">&lt;li&gt;&lt;a </span><span class="s2">href</span><span class="s3">=&quot;{% url 'book' book.id %}&quot;</span><span class="s1">&gt;</span><span class="s0">{{ book.name }}</span><span class="s1">&lt;/a&gt;&lt;/li&gt;</span>
+    <span class="s0">{% empty %}</span>
+      <span class="s1">&lt;i&gt;</span><span class="s0">Nothing found</span><span class="s1">&lt;/i&gt;</span>
+    <span class="s0">{% endfor %}</span>
+    <span class="s1">&lt;/ul&gt;</span>
+  <span class="s1">&lt;h2&gt;</span><span class="s0">Authors:</span><span class="s1">&lt;/h2&gt;</span>
+    <span class="s1">&lt;ul&gt;</span>
+    <span class="s0">{% for author in authors %}</span>
+      <span class="s1">&lt;li&gt;&lt;a </span><span class="s2">href</span><span class="s3">=&quot;{% url 'author' author.id %}&quot;</span><span class="s1">&gt;</span><span class="s0">{{ author }}</span><span class="s1">&lt;/li&gt;</span>
+    <span class="s0">{% empty %}</span>
+      <span class="s1">&lt;i&gt;</span><span class="s0">Nothing found</span><span class="s1">&lt;/i&gt;</span>
+    <span class="s0">{% endfor %}</span>
+    <span class="s1">&lt;/ul&gt;</span>
+<span class="s0">{% endblock %}</span></pre>
+</body>
+</html>
